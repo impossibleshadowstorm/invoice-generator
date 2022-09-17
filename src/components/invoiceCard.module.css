@@ -1,0 +1,18 @@
+input:focus {
+    border: 2px solid #444;
+    outline-style: dotted;
+    outline-color: #444;
+    box-sizing: border-box;
+    outline-width: 1px;
+    border-radius: 2px;
+    outline: none;
+    border-bottom: 3px dashed red;
+    background-color: #FDF4DB;
+}
+input{
+    outline: red;
+}
+
+.input_field input:focus{
+    outline: 20px dotted red;
+}
