@@ -1,8 +1,14 @@
 import React, { useContext } from "react";
-import { Container, Box, Typography, Grid } from "@mui/material";
+import {
+  Container,
+  Box,
+  Typography,
+  Grid,
+  MenuItem,
+  Select,
+} from "@mui/material";
 import { EditText } from "react-edit-text";
 import style from "./invoiceCard.module.css";
-import CustomSelect from "./common/customSelect";
 import data from "./data/country";
 import GlobalContext from "../context/GlobalContext";
 import CustomizedRow from "./common/customizedRow";
@@ -20,16 +26,23 @@ const cssStyles = {
     boxSizing: "border-box",
     border: "none",
     borderBottom: "1px dashed #E1ECFD",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
   },
   EditTextInvoiceStyle: {
     paddingRight: "0",
     textAlign: "right",
     color: "black",
     fontSize: "45px",
-    width: "300px",
+    width: "90%",
+    textTransform: "uppercase",
     borderBottom: "1px dashed #E1ECFD",
     float: "right",
     height: "75px",
+    textOverflow: "ellipsis",
+    whiteSpace: "nowrap",
+    overflow: "hidden",
   },
 };
 
@@ -63,42 +76,15 @@ const invoiceTableHeading = {
   amount: "Amount",
 };
 
-
-
 const InvoiceCard = () => {
   const {
-    companyName,
-    setCompanyName,
-    companyAddress,
-    setCompanyAddress,
-    companyCityStateZip,
-    setCompanyCityStateZip,
-    companyCountry,
-    setCompanyCountry,
-    yourName,
-    setYourName,
-    clientCompanyName,
-    setClientCompanyName,
-    clientCompanyAddress,
-    setClientCompanyAddress,
-    clientCompanyCityStateZip,
-    setClientCompanyCityStateZip,
-    clientCompanyCountry,
-    setClientCompanyCountry,
-    invoiceNameTag,
-    setInvoiceNameTag,
-    invoiceName,
-    setInvoiceName,
-    invoiceDateTag,
-    setInvoiceDateTag,
-    invoiceDate,
-    setInvoiceDate,
-    dueDateTag,
-    setDueDateTag,
-    dueDate,
-    setDueDate,
+    company,
+    companyInputEvent,
+    invoiceHeading,
+    setInvoiceHeading,
+    invoiceMetaData,
+    invoiceMetaDataInputEvent,
   } = useContext(GlobalContext);
-  
 
   return (
     <Container
@@ -118,40 +104,61 @@ const InvoiceCard = () => {
           }}
         >
           <EditText
-            onChange={(e) => setCompanyName(e.target.value)}
-            value={companyName}
+            onChange={companyInputEvent}
+            name="companyName"
+            value={company.companyName}
             placeholder={placeholders.supplierCompany.yourCompany}
             style={cssStyles.EditTextStyle}
           />
           <EditText
-            onChange={(e) => setYourName(e.target.value)}
-            value={yourName}
+            onChange={companyInputEvent}
+            name="yourName"
+            value={company.yourName}
             placeholder={placeholders.supplierCompany.yourName}
             style={cssStyles.EditTextStyle}
           />
           <EditText
-            onChange={(e) => setCompanyAddress(e.target.value)}
-            value={companyAddress}
+            onChange={companyInputEvent}
+            name="companyAddress"
+            value={company.companyAddress}
             placeholder={placeholders.supplierCompany.companyAddress}
             style={cssStyles.EditTextStyle}
           />
           <EditText
-            onChange={(e) => setCompanyCityStateZip(e.target.value)}
-            value={companyCityStateZip}
+            onChange={companyInputEvent}
+            name="companyCityStateZip"
+            value={company.companyCityStateZip}
             placeholder={placeholders.supplierCompany.cityStateZip}
             style={cssStyles.EditTextStyle}
           />
-          <CustomSelect
-            style={{ width: "350px", height: "40px", color: "black" }}
-            selectOptions={data.Country}
-          />
+          <Select
+            sx={{ width: "350px" }}
+            variant="standard"
+            style={{
+              ...style,
+              backgroundColor: "transparent",
+              outline: "none",
+              color: "#444",
+              border: "none",
+              height: "30px",
+              fontSize: "14px",
+            }}
+            defaultValue={company.companyCountry}
+            name="companyCountry"
+            onChange={companyInputEvent}
+            value={company.companyCountry}
+          >
+            {data.Country.map((items) => (
+              <MenuItem value={items.code}>{items.name}</MenuItem>
+            ))}
+          </Select>
         </Box>
         <Box sx={{ width: "50%" }}>
           <Box sx={{ height: "20px" }}></Box>
           <EditText
-            onChange={(e) => setInvoiceName(e.target.value)}
-            value={invoiceName}
-            defaultValue="INVOICE"
+            onChange={(e) => setInvoiceHeading(e.target.value.toLowerCase)}
+            value={invoiceHeading}
+            defaultValue={invoiceHeading}
             placeholder="INVOICE"
             style={{
               ...cssStyles.EditTextStyle,
@@ -175,71 +182,98 @@ const InvoiceCard = () => {
             Bill To :
           </Typography>
           <EditText
-            onChange={(e) => setClientCompanyName(e.target.value)}
-            value={clientCompanyName}
+            onChange={companyInputEvent}
+            name="clientCompanyName"
+            value={company.clientCompanyName}
             placeholder={placeholders.billToCompany.clientCompany}
             style={cssStyles.EditTextStyle}
           />
           <EditText
-            onChange={(e) => setClientCompanyAddress(e.target.value)}
-            value={clientCompanyAddress}
+            onChange={companyInputEvent}
+            name="clientCompanyAddress"
+            value={company.clientCompanyAddress}
             placeholder={placeholders.billToCompany.clientAddress}
             style={cssStyles.EditTextStyle}
           />
           <EditText
-            onChange={(e) => setClientCompanyCityStateZip(e.target.value)}
-            value={clientCompanyCityStateZip}
+            onChange={companyInputEvent}
+            name="clientCompanyCityStateZip"
+            value={company.clientCompanyCityStateZip}
             placeholder={placeholders.billToCompany.cityStateZip}
             style={cssStyles.EditTextStyle}
           />
-          <CustomSelect
-            style={{ width: "350px", height: "40px", color: "black" }}
-            selectOptions={data.Country}
-          />
+          <Select
+            sx={{ width: "350px" }}
+            variant="standard"
+            style={{
+              ...style,
+              backgroundColor: "transparent",
+              outline: "none",
+              color: "#444",
+              border: "none",
+              height: "30px",
+              fontSize: "14px",
+            }}
+            defaultValue={company.clientCompanyCountry}
+            name="clientCompanyCountry"
+            onChange={companyInputEvent}
+            value={company.clientCompanyCountry}
+          >
+            {data.Country.map((items) => (
+              <MenuItem value={items.code}>{items.name}</MenuItem>
+            ))}
+          </Select>
         </Box>
         <Box sx={{ width: "30%", display: "flex" }}>
           <Box sx={{ width: "40%" }}>
             <EditText
-              onChange={(e) => setInvoiceNameTag(e.target.value)}
-              value={invoiceNameTag}
+              onChange={invoiceMetaDataInputEvent}
+              name="invoiceNumberTag"
+              value={invoiceMetaData.invoiceNumberTag}
               placeholder={placeholders.invoiceTag.invoiceNameTag}
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
             <EditText
-              onChange={(e) => setInvoiceDateTag(e.target.value)}
-              value={invoiceDateTag}
+              onChange={invoiceMetaDataInputEvent}
+              name="invoiceDateTag"
+              value={invoiceMetaData.invoiceDateTag}
               placeholder={placeholders.invoiceTag.invoiceDateTag}
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
             <EditText
-              onChange={(e) => setDueDateTag(e.target.value)}
-              value={dueDateTag}
+              onChange={invoiceMetaDataInputEvent}
+              name="invoiceDueDateTag"
+              value={invoiceMetaData.invoiceDueDateTag}
               placeholder={placeholders.invoiceTag.dueDateTag}
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
           </Box>
           <Box sx={{ width: "60%" }}>
             <EditText
-              onChange={(e) => setInvoiceName(e.target.value)}
-              value={invoiceName}
+              onChange={invoiceMetaDataInputEvent}
+              name="invoiceNumber"
+              value={invoiceMetaData.invoiceNumber}
               placeholder={placeholders.invoice.invoiceName}
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
             <EditText
-              onChange={(e) => setInvoiceDate(e.target.value)}
-              value={invoiceDate}
+              onChange={invoiceMetaDataInputEvent}
+              name="invoiceDate"
+              value={invoiceMetaData.invoiceDate}
               placeholder={placeholders.invoice.invoiceDate}
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
             <EditText
-              onChange={(e) => setDueDate(e.target.value)}
-              value={dueDate}
+              onChange={invoiceMetaDataInputEvent}
+              name="invoiceDueDate"
+              value={invoiceMetaData.invoiceDueDate}
               placeholder={placeholders.invoice.invoiceDate}
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
           </Box>
         </Box>
       </Box>
+      {/* Table Grid */}
       <Box sx={{ height: "100%", width: "100%", marginTop: "30px" }}>
         <Box
           sx={{
@@ -248,6 +282,7 @@ const InvoiceCard = () => {
             boxSizing: "border-box",
           }}
         >
+          {/* Heading */}
           <Grid
             container
             sx={{ backgroundColor: "#666666", height: "40px", width: "97%" }}
@@ -319,7 +354,6 @@ const InvoiceCard = () => {
           {/* Row */}
           <Box sx={{ width: "97%", display: "flex" }}>
             <CustomizedRow />
-            
           </Box>
           <Box sx={{ width: "100%", display: "flex" }}>
             <CustomizedRow />
@@ -334,7 +368,7 @@ const InvoiceCard = () => {
                 "&:hover": {
                   cursor: "pointer",
                   zIndex: "1",
-                  opacity: "1"
+                  opacity: "1",
                 },
               }}
             >
@@ -348,6 +382,49 @@ const InvoiceCard = () => {
                   "&:hover": { visibility: "visible", cursor: "pointer" },
                 }}
               />
+            </Box>
+          </Box>
+        </Box>
+      </Box>
+
+      {/* Total */}
+      <Box
+        sx={{
+          height: "140px",
+          display: "flex",
+          padding: "4px 15px",
+          boxSizing: "border-box",
+          width: "100%",
+        }}
+      >
+        <Box sx={{ width: "48.5%" }}></Box>
+        <Box
+          sx={{
+            width: "48.5%",
+            height: "30%",
+            backgroundColor: "red",
+          }}
+        >
+          <Box sx={{ display: "flex" }}>
+            <Box
+              sx={{
+                width: "35%",
+                backgroundColor: "blue",
+                padding: "10px",
+                boxSizing: "border-box",
+              }}
+            >
+              {/* <Typography sx={{ textAlign: "right" }}>Sub Total</Typography> */}
+            </Box>
+            <Box
+              sx={{
+                width: "65%",
+                padding: "10px",
+                // backgroundColor: "yellow",
+                boxSizing: "border-box",
+              }}
+            >
+              {/* <Typography sx={{ textAlign: "right" }}>Sub Total</Typography> */}
             </Box>
           </Box>
         </Box>

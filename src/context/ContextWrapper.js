@@ -2,84 +2,67 @@ import React, { useState } from "react";
 import GlobalContext from "./GlobalContext";
 
 const ContextWrapper = (props) => {
-  const [companyName, setCompanyName] = useState("");
-  const [companyAddress, setCompanyAddress] = useState("");
-  const [companyCityStateZip, setCompanyCityStateZip] = useState("");
-  const [companyCountry, setCompanyCountry] = useState("");
-  const [yourName, setYourName] = useState("");
-  const [invoiceNameTag, setInvoiceNameTag] = useState("Invoice#");
-  const [invoiceName, setInvoiceName] = useState("");
-  const [invoiceDateTag, setInvoiceDateTag] = useState("Invoice Date");
-  const [invoiceDate, setInvoiceDate] = useState("");
-  const [dueDateTag, setDueDateTag] = useState("Due Date");
-  const [dueDate, setDueDate] = useState("");
-
-  const [clientCompanyName, setClientCompanyName] = useState("");
-  const [clientCompanyAddress, setClientCompanyAddress] = useState("");
-  const [clientCompanyCityStateZip, setClientCompanyCityStateZip] =
-    useState("");
-  const [clientCompanyCountry, setClientCompanyCountry] = useState("");
 
   const [company, setCompany] = useState({
     companyName: "",
+    yourName: "",
     companyAddress: "",
     companyCityStateZip: "",
-    companyCountry: "",
-    yourName: "",
+    companyCountry: "IN",
     clientCompanyName: "",
     clientCompanyAddress: "",
     clientCompanyCityStateZip: "",
-    clientCompanyCountry: "",
+    clientCompanyCountry: "IN",
   });
 
-  const inputEvent = (event) => {
-    console.log(event.target.value);
-
+  const companyInputEvent = (event) => {
     const { value, name } = event.target;
 
     setCompany((preValue) => {
-      if (name === "companyName") {
-        return;
-      }
+      console.log(preValue);
+      return {
+        ...preValue,
+        [name]: value,
+      };
+    });
+  };
+
+  const [invoiceMetaData, setInvoiceMetaData] = useState({
+    invoiceNumberTag: "Invoice#",
+    invoiceNumber: "",
+    invoiceDateTag: "Invoice Date",
+    invoiceDate: "",
+    invoiceDueDateTag: "Due Date",
+    invoiceDueDate: "",
+  });
+
+  const invoiceMetaDataInputEvent = (event) => {
+    const { value, name } = event.target;
+
+    console.log(value);
+    console.log(name);
+
+    setInvoiceMetaData((preValue) => {
+      console.log(preValue);
+      return {
+        ...preValue,
+        [name]: value,
+      };
     });
   };
 
   // Invoice Data
-  const [invoiceItem, setInvoiceItem] = useState();
+  const [invoiceHeading, setInvoiceHeading] = useState("Invoice");
 
   return (
     <GlobalContext.Provider
       value={{
-        companyName,
-        setCompanyName,
-        companyAddress,
-        setCompanyAddress,
-        companyCityStateZip,
-        setCompanyCityStateZip,
-        companyCountry,
-        setCompanyCountry,
-        yourName,
-        setYourName,
-        clientCompanyName,
-        setClientCompanyName,
-        clientCompanyAddress,
-        setClientCompanyAddress,
-        clientCompanyCityStateZip,
-        setClientCompanyCityStateZip,
-        clientCompanyCountry,
-        setClientCompanyCountry,
-        invoiceName,
-        setInvoiceName,
-        invoiceNameTag,
-        setInvoiceNameTag,
-        invoiceDateTag,
-        setInvoiceDateTag,
-        invoiceDate,
-        setInvoiceDate,
-        dueDateTag,
-        setDueDateTag,
-        dueDate,
-        setDueDate,
+        company,
+        companyInputEvent,
+        invoiceHeading,
+        setInvoiceHeading,
+        invoiceMetaData,
+        invoiceMetaDataInputEvent,
       }}
     >
       {props.children}

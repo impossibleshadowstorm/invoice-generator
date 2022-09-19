@@ -12,7 +12,7 @@ const cssStyles = {
     borderBottom: "1px dashed #E1ECFD",
     width: "80%",
     fontSize: "14px",
-    padding: "0 10px",
+    padding: "0px 0px",
     color: "black",
   },
 };

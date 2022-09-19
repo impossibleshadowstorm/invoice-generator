@@ -1,24 +1,6 @@
 import React from "react";
 
 const GlobalContext = React.createContext({
-  companyName: "",
-  setCompanyName: () => {},
-  companyAddress: "",
-  setCompanyAddress: () => {},
-  companyCityStateZip: "",
-  setCompanyCityStateZip: () => {},
-  companyCountry: "",
-  setCompanyCountry: () => {},
-  yourName: "",
-  setYourName: () => {},
-  clientCompanyName: "",
-  setClientCompanyName: () => {},
-  clientCompanyAddress: "",
-  setClientCompanyAddress: () => {},
-  clientCompanyCityStateZip: "",
-  setClientCompanyCityStateZip: () => {},
-  clientCompanyCountry: "",
-  setClientCompanyCountry: () => {},
   invoiceName: "",
   setInvoiceName: () => {},
   invoiceDate: "",
@@ -31,6 +13,9 @@ const GlobalContext = React.createContext({
   setInvoiceDateTag: () => {},
   dueDateTag: "",
   setDueDateTag: () => {},
+  companyInputEvent: () => {},
+  company: {},
+  setCompany: () => {},
 });
 
 export default GlobalContext;
