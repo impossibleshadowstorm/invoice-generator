@@ -7,7 +7,7 @@ import {
   MenuItem,
   Select,
 } from "@mui/material";
-import { EditText } from "react-edit-text";
+import { EditText, EditTextarea } from "react-edit-text";
 import style from "./invoiceCard.module.css";
 import data from "./data/country";
 import GlobalContext from "../context/GlobalContext";
@@ -44,6 +44,16 @@ const cssStyles = {
     whiteSpace: "nowrap",
     overflow: "hidden",
   },
+  EditTextareaStyle: {
+    margin: "2px 0",
+    marginRight: "5px",
+    fontSize: "14px",
+    boxSizing: "border-box",
+    border: "none",
+    borderBottom: "1px dashed #E1ECFD",
+    width: "80%",
+    color: "black",
+  },
 };
 
 const placeholders = {
@@ -76,6 +86,8 @@ const invoiceTableHeading = {
   amount: "Amount",
 };
 
+
+
 const InvoiceCard = () => {
   const {
     company,
@@ -84,6 +96,8 @@ const InvoiceCard = () => {
     setInvoiceHeading,
     invoiceMetaData,
     invoiceMetaDataInputEvent,
+    billCurrency,
+    setBillCurrency,
   } = useContext(GlobalContext);
 
   return (
@@ -95,6 +109,7 @@ const InvoiceCard = () => {
         padding: "40px",
       }}
     >
+      {/* Supplier Company Details */}
       <Box sx={{ height: "162px", width: "100%", display: "flex" }}>
         <Box
           sx={{
@@ -156,7 +171,7 @@ const InvoiceCard = () => {
         <Box sx={{ width: "50%" }}>
           <Box sx={{ height: "20px" }}></Box>
           <EditText
-            onChange={(e) => setInvoiceHeading(e.target.value.toLowerCase)}
+            onChange={(e) => setInvoiceHeading(e.target.value.toLowerCase())}
             value={invoiceHeading}
             defaultValue={invoiceHeading}
             placeholder="INVOICE"
@@ -168,6 +183,7 @@ const InvoiceCard = () => {
         </Box>
       </Box>
       <Box sx={{ height: "80px" }}></Box>
+      {/* Customer Company Details */}
       <Box sx={{ width: "100%", height: "145px", display: "flex" }}>
         <Box
           sx={{
@@ -401,33 +417,192 @@ const InvoiceCard = () => {
         <Box
           sx={{
             width: "48.5%",
-            height: "30%",
-            backgroundColor: "red",
+            height: "100%",
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", height: "30%" }}>
             <Box
               sx={{
                 width: "35%",
-                backgroundColor: "blue",
                 padding: "10px",
                 boxSizing: "border-box",
               }}
             >
-              {/* <Typography sx={{ textAlign: "right" }}>Sub Total</Typography> */}
+              <Typography sx={{ textAlign: "right", color: "#5A5A5A" }}>
+                Sub Total
+              </Typography>
             </Box>
             <Box
               sx={{
                 width: "65%",
                 padding: "10px",
-                // backgroundColor: "yellow",
                 boxSizing: "border-box",
               }}
             >
-              {/* <Typography sx={{ textAlign: "right" }}>Sub Total</Typography> */}
+              <Typography
+                sx={{ textAlign: "right", color: "black", fontWeight: "bold" }}
+              >
+                0
+              </Typography>
+            </Box>
+          </Box>
+          <Box sx={{ display: "flex", height: "30%" }}>
+            <Box
+              sx={{
+                width: "35%",
+                padding: "10px",
+                boxSizing: "border-box",
+              }}
+            >
+              <Typography sx={{ textAlign: "right", color: "#5A5A5A" }}>
+                Sales Taxes (10%)
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "65%",
+                padding: "10px",
+                boxSizing: "border-box",
+              }}
+            >
+              <Typography
+                sx={{ textAlign: "right", color: "black", fontWeight: "bold" }}
+              >
+                0
+              </Typography>
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              height: "40%",
+              alignItems: "center",
+              backgroundColor: "#E3E3E3",
+              borderTop: "2px solid #C7C7C7",
+            }}
+          >
+            <Box
+              sx={{
+                width: "35%",
+                padding: "10px",
+                boxSizing: "border-box",
+              }}
+            >
+              <Typography
+                sx={{
+                  textAlign: "right",
+                  textTransform: "uppercase",
+                  color: "#5A5A5A",
+                }}
+              >
+                Total
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                width: "65%",
+                padding: "10px",
+                boxSizing: "border-box",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "flex-end",
+              }}
+            >
+              {/* Currency Selector */}
+              <Select
+                sx={{ width: "10%px" }}
+                variant="standard"
+                style={{
+                  backgroundColor: "transparent",
+                  outline: "none",
+                  color: "#444",
+                  border: "none",
+                  fontSize: "14px",
+                }}
+                defaultValue={billCurrency}
+                onChange={(e) => {
+                  setBillCurrency(e.target.value);
+                  console.log(billCurrency);
+                }}
+                value={billCurrency}
+              >
+                {data.Currency.map((items) => (
+                  <MenuItem value={items.currency}>{items.country}</MenuItem>
+                ))}
+              </Select>
+              <Typography
+                sx={{
+                  textAlign: "right",
+                  color: "black",
+                  fontWeight: "bold",
+                  width: "50%",
+                }}
+              >
+                0
+              </Typography>
             </Box>
           </Box>
         </Box>
+      </Box>
+
+      {/* Note */}
+      <Box
+        sx={{
+          marginTop: "5px",
+          padding: "0 15px",
+          width: "100%",
+          boxSizing: "border-box",
+        }}
+      >
+        <EditText
+          placeholder={"Notes"}
+          style={{
+            ...cssStyles.EditTextStyle,
+            width: "100%",
+            fontWeight: "bold",
+            marginBottom: "10px",
+          }}
+        />
+        <EditTextarea
+          placeholder="Description"
+          style={{
+            ...cssStyles.EditTextareaStyle,
+            height: "89px",
+            width: "100%",
+            boxSizing: "border-box",
+            padding: "5px ",
+          }}
+        />
+      </Box>
+
+      {/* T & C's */}
+      <Box
+        sx={{
+          padding: "0 15px",
+          width: "100%",
+          boxSizing: "border-box",
+          marginTop: "20px",
+        }}
+      >
+        <EditText
+          placeholder={"Terms And Conditions"}
+          style={{
+            ...cssStyles.EditTextStyle,
+            width: "100%",
+            fontWeight: "bold",
+            marginBottom: "10px",
+          }}
+        />
+        <EditTextarea
+          placeholder="Description"
+          style={{
+            ...cssStyles.EditTextareaStyle,
+            height: "89px",
+            width: "100%",
+            boxSizing: "border-box",
+            padding: "5px ",
+          }}
+        />
       </Box>
     </Container>
   );

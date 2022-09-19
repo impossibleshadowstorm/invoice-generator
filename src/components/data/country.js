@@ -245,5 +245,1771 @@ const Country = [
   { name: "Zimbabwe", code: "ZW" },
 ];
 
+const Currency = [
+  {
+    country: "AFGHANISTAN",
+    currency: "AFN",
+  },
+  {
+    country: "ÅLAND ISLANDS",
+    currency: "EUR",
+  },
+  {
+    country: "ALBANIA",
+    currency: "ALL",
+  },
+  {
+    country: "ALGERIA",
+    currency: "DZD",
+  },
+  {
+    country: "AMERICAN SAMOA",
+    currency: "USD",
+  },
+  {
+    country: "ANDORRA",
+    currency: "EUR",
+  },
+  {
+    country: "ANGOLA",
+    currency: "AOA",
+  },
+  {
+    country: "ANGUILLA",
+    currency: "XCD",
+  },
+  {
+    country: "ANTARCTICA",
+    currency: "",
+  },
+  {
+    country: "ANTIGUA AND BARBUDA",
+    currency: "XCD",
+  },
+  {
+    country: "ARGENTINA",
+    currency: "ARS",
+  },
+  {
+    country: "ARMENIA",
+    currency: "AMD",
+  },
+  {
+    country: "ARUBA",
+    currency: "AWG",
+  },
+  {
+    country: "AUSTRALIA",
+    currency: "AUD",
+  },
+  {
+    country: "AUSTRIA",
+    currency: "EUR",
+  },
+  {
+    country: "AZERBAIJAN",
+    currency: "AZN",
+  },
+  {
+    country: "BAHAMAS (THE)",
+    currency: "BSD",
+  },
+  {
+    country: "BAHRAIN",
+    currency: "BHD",
+  },
+  {
+    country: "BANGLADESH",
+    currency: "BDT",
+  },
+  {
+    country: "BARBADOS",
+    currency: "BBD",
+  },
+  {
+    country: "BELARUS",
+    currency: "BYN",
+  },
+  {
+    country: "BELGIUM",
+    currency: "EUR",
+  },
+  {
+    country: "BELIZE",
+    currency: "BZD",
+  },
+  {
+    country: "BENIN",
+    currency: "XOF",
+  },
+  {
+    country: "BERMUDA",
+    currency: "BMD",
+  },
+  {
+    country: "BHUTAN",
+    currency: "INR",
+  },
+  {
+    country: "BHUTAN",
+    currency: "BTN",
+  },
+  {
+    country: "BOLIVIA (PLURINATIONAL STATE OF)",
+    currency: "BOB",
+  },
+  {
+    country: "BOLIVIA (PLURINATIONAL STATE OF)",
+    currency: "BOV",
+  },
+  {
+    country: "BONAIRE, SINT EUSTATIUS AND SABA",
+    currency: "USD",
+  },
+  {
+    country: "BOSNIA AND HERZEGOVINA",
+    currency: "BAM",
+  },
+  {
+    country: "BOTSWANA",
+    currency: "BWP",
+  },
+  {
+    country: "BOUVET ISLAND",
+    currency: "NOK",
+  },
+  {
+    country: "BRAZIL",
+    currency: "BRL",
+  },
+  {
+    country: "BRITISH INDIAN OCEAN TERRITORY (THE)",
+    currency: "USD",
+  },
+  {
+    country: "BRUNEI DARUSSALAM",
+    currency: "BND",
+  },
+  {
+    country: "BULGARIA",
+    currency: "BGN",
+  },
+  {
+    country: "BURKINA FASO",
+    currency: "XOF",
+  },
+  {
+    country: "BURUNDI",
+    currency: "BIF",
+  },
+  {
+    country: "CABO VERDE",
+    currency: "CVE",
+  },
+  {
+    country: "CAMBODIA",
+    currency: "KHR",
+  },
+  {
+    country: "CAMEROON",
+    currency: "XAF",
+  },
+  {
+    country: "CANADA",
+    currency: "CAD",
+  },
+  {
+    country: "CAYMAN ISLANDS (THE)",
+    currency: "KYD",
+  },
+  {
+    country: "CENTRAL AFRICAN REPUBLIC (THE)",
+    currency: "XAF",
+  },
+  {
+    country: "CHAD",
+    currency: "XAF",
+  },
+  {
+    country: "CHILE",
+    currency: "CLP",
+  },
+  {
+    country: "CHILE",
+    currency: "CLF",
+  },
+  {
+    country: "CHINA",
+    currency: "CNY",
+  },
+  {
+    country: "CHRISTMAS ISLAND",
+    currency: "AUD",
+  },
+  {
+    country: "COCOS (KEELING) ISLANDS (THE)",
+    currency: "AUD",
+  },
+  {
+    country: "COLOMBIA",
+    currency: "COP",
+  },
+  {
+    country: "COLOMBIA",
+    currency: "COU",
+  },
+  {
+    country: "COMOROS (THE)",
+    currency: "KMF",
+  },
+  {
+    country: "CONGO (THE DEMOCRATIC REPUBLIC OF THE)",
+    currency: "CDF",
+  },
+  {
+    country: "CONGO (THE)",
+    currency: "XAF",
+  },
+  {
+    country: "COOK ISLANDS (THE)",
+    currency: "NZD",
+  },
+  {
+    country: "COSTA RICA",
+    currency: "CRC",
+  },
+  {
+    country: "CÔTE D'IVOIRE",
+    currency: "XOF",
+  },
+  {
+    country: "CROATIA",
+    currency: "HRK",
+  },
+  {
+    country: "CUBA",
+    currency: "CUP",
+  },
+  {
+    country: "CUBA",
+    currency: "CUC",
+  },
+  {
+    country: "CURAÇAO",
+    currency: "ANG",
+  },
+  {
+    country: "CYPRUS",
+    currency: "EUR",
+  },
+  {
+    country: "CZECHIA",
+    currency: "CZK",
+  },
+  {
+    country: "DENMARK",
+    currency: "DKK",
+  },
+  {
+    country: "DJIBOUTI",
+    currency: "DJF",
+  },
+  {
+    country: "DOMINICA",
+    currency: "XCD",
+  },
+  {
+    country: "DOMINICAN REPUBLIC (THE)",
+    currency: "DOP",
+  },
+  {
+    country: "ECUADOR",
+    currency: "USD",
+  },
+  {
+    country: "EGYPT",
+    currency: "EGP",
+  },
+  {
+    country: "EL SALVADOR",
+    currency: "SVC",
+  },
+  {
+    country: "EL SALVADOR",
+    currency: "USD",
+  },
+  {
+    country: "EQUATORIAL GUINEA",
+    currency: "XAF",
+  },
+  {
+    country: "ERITREA",
+    currency: "ERN",
+  },
+  {
+    country: "ESTONIA",
+    currency: "EUR",
+  },
+  {
+    country: "ESWATINI",
+    currency: "SZL",
+  },
+  {
+    country: "ETHIOPIA",
+    currency: "ETB",
+  },
+  {
+    country: "EUROPEAN UNION",
+    currency: "EUR",
+  },
+  {
+    country: "FALKLAND ISLANDS (THE) [MALVINAS]",
+    currency: "FKP",
+  },
+  {
+    country: "FAROE ISLANDS (THE)",
+    currency: "DKK",
+  },
+  {
+    country: "FIJI",
+    currency: "FJD",
+  },
+  {
+    country: "FINLAND",
+    currency: "EUR",
+  },
+  {
+    country: "FRANCE",
+    currency: "EUR",
+  },
+  {
+    country: "FRENCH GUIANA",
+    currency: "EUR",
+  },
+  {
+    country: "FRENCH POLYNESIA",
+    currency: "XPF",
+  },
+  {
+    country: "FRENCH SOUTHERN TERRITORIES (THE)",
+    currency: "EUR",
+  },
+  {
+    country: "GABON",
+    currency: "XAF",
+  },
+  {
+    country: "GAMBIA (THE)",
+    currency: "GMD",
+  },
+  {
+    country: "GEORGIA",
+    currency: "GEL",
+  },
+  {
+    country: "GERMANY",
+    currency: "EUR",
+  },
+  {
+    country: "GHANA",
+    currency: "GHS",
+  },
+  {
+    country: "GIBRALTAR",
+    currency: "GIP",
+  },
+  {
+    country: "GREECE",
+    currency: "EUR",
+  },
+  {
+    country: "GREENLAND",
+    currency: "DKK",
+  },
+  {
+    country: "GRENADA",
+    currency: "XCD",
+  },
+  {
+    country: "GUADELOUPE",
+    currency: "EUR",
+  },
+  {
+    country: "GUAM",
+    currency: "USD",
+  },
+  {
+    country: "GUATEMALA",
+    currency: "GTQ",
+  },
+  {
+    country: "GUERNSEY",
+    currency: "GBP",
+  },
+  {
+    country: "GUINEA",
+    currency: "GNF",
+  },
+  {
+    country: "GUINEA-BISSAU",
+    currency: "XOF",
+  },
+  {
+    country: "GUYANA",
+    currency: "GYD",
+  },
+  {
+    country: "HAITI",
+    currency: "HTG",
+  },
+  {
+    country: "HAITI",
+    currency: "USD",
+  },
+  {
+    country: "HEARD ISLAND AND McDONALD ISLANDS",
+    currency: "AUD",
+  },
+  {
+    country: "HOLY SEE (THE)",
+    currency: "EUR",
+  },
+  {
+    country: "HONDURAS",
+    currency: "HNL",
+  },
+  {
+    country: "HONG KONG",
+    currency: "HKD",
+  },
+  {
+    country: "HUNGARY",
+    currency: "HUF",
+  },
+  {
+    country: "ICELAND",
+    currency: "ISK",
+  },
+  {
+    country: "INDIA",
+    currency: "INR",
+  },
+  {
+    country: "INDONESIA",
+    currency: "IDR",
+  },
+  {
+    country: "INTERNATIONAL MONETARY FUND (IMF)",
+    currency: "XDR",
+  },
+  {
+    country: "IRAN (ISLAMIC REPUBLIC OF)",
+    currency: "IRR",
+  },
+  {
+    country: "IRAQ",
+    currency: "IQD",
+  },
+  {
+    country: "IRELAND",
+    currency: "EUR",
+  },
+  {
+    country: "ISLE OF MAN",
+    currency: "GBP",
+  },
+  {
+    country: "ISRAEL",
+    currency: "ILS",
+  },
+  {
+    country: "ITALY",
+    currency: "EUR",
+  },
+  {
+    country: "JAMAICA",
+    currency: "JMD",
+  },
+  {
+    country: "JAPAN",
+    currency: "JPY",
+  },
+  {
+    country: "JERSEY",
+    currency: "GBP",
+  },
+  {
+    country: "JORDAN",
+    currency: "JOD",
+  },
+  {
+    country: "KAZAKHSTAN",
+    currency: "KZT",
+  },
+  {
+    country: "KENYA",
+    currency: "KES",
+  },
+  {
+    country: "KIRIBATI",
+    currency: "AUD",
+  },
+  {
+    country: "KOREA (THE DEMOCRATIC PEOPLE'S REPUBLIC OF)",
+    currency: "KPW",
+  },
+  {
+    country: "KOREA (THE REPUBLIC OF)",
+    currency: "KRW",
+  },
+  {
+    country: "KUWAIT",
+    currency: "KWD",
+  },
+  {
+    country: "KYRGYZSTAN",
+    currency: "KGS",
+  },
+  {
+    country: "LAO PEOPLE'S DEMOCRATIC REPUBLIC (THE)",
+    currency: "LAK",
+  },
+  {
+    country: "LATVIA",
+    currency: "EUR",
+  },
+  {
+    country: "LEBANON",
+    currency: "LBP",
+  },
+  {
+    country: "LESOTHO",
+    currency: "LSL",
+  },
+  {
+    country: "LESOTHO",
+    currency: "ZAR",
+  },
+  {
+    country: "LIBERIA",
+    currency: "LRD",
+  },
+  {
+    country: "LIBYA",
+    currency: "LYD",
+  },
+  {
+    country: "LIECHTENSTEIN",
+    currency: "CHF",
+  },
+  {
+    country: "LITHUANIA",
+    currency: "EUR",
+  },
+  {
+    country: "LUXEMBOURG",
+    currency: "EUR",
+  },
+  {
+    country: "MACAO",
+    currency: "MOP",
+  },
+  {
+    country: "NORTH MACEDONIA",
+    currency: "MKD",
+  },
+  {
+    country: "MADAGASCAR",
+    currency: "MGA",
+  },
+  {
+    country: "MALAWI",
+    currency: "MWK",
+  },
+  {
+    country: "MALAYSIA",
+    currency: "MYR",
+  },
+  {
+    country: "MALDIVES",
+    currency: "MVR",
+  },
+  {
+    country: "MALI",
+    currency: "XOF",
+  },
+  {
+    country: "MALTA",
+    currency: "EUR",
+  },
+  {
+    country: "MARSHALL ISLANDS (THE)",
+    currency: "USD",
+  },
+  {
+    country: "MARTINIQUE",
+    currency: "EUR",
+  },
+  {
+    country: "MAURITANIA",
+    currency: "MRU",
+  },
+  {
+    country: "MAURITIUS",
+    currency: "MUR",
+  },
+  {
+    country: "MAYOTTE",
+    currency: "EUR",
+  },
+  {
+    country: "MEMBER COUNTRIES OF THE AFRICAN DEVELOPMENT BANK GROUP",
+    currency: "XUA",
+  },
+  {
+    country: "MEXICO",
+    currency: "MXN",
+  },
+  {
+    country: "MEXICO",
+    currency: "MXV",
+  },
+  {
+    country: "MICRONESIA (FEDERATED STATES OF)",
+    currency: "USD",
+  },
+  {
+    country: "MOLDOVA (THE REPUBLIC OF)",
+    currency: "MDL",
+  },
+  {
+    country: "MONACO",
+    currency: "EUR",
+  },
+  {
+    country: "MONGOLIA",
+    currency: "MNT",
+  },
+  {
+    country: "MONTENEGRO",
+    currency: "EUR",
+  },
+  {
+    country: "MONTSERRAT",
+    currency: "XCD",
+  },
+  {
+    country: "MOROCCO",
+    currency: "MAD",
+  },
+  {
+    country: "MOZAMBIQUE",
+    currency: "MZN",
+  },
+  {
+    country: "MYANMAR",
+    currency: "MMK",
+  },
+  {
+    country: "NAMIBIA",
+    currency: "NAD",
+  },
+  {
+    country: "NAMIBIA",
+    currency: "ZAR",
+  },
+  {
+    country: "NAURU",
+    currency: "AUD",
+  },
+  {
+    country: "NEPAL",
+    currency: "NPR",
+  },
+  {
+    country: "NETHERLANDS (THE)",
+    currency: "EUR",
+  },
+  {
+    country: "NEW CALEDONIA",
+    currency: "XPF",
+  },
+  {
+    country: "NEW ZEALAND",
+    currency: "NZD",
+  },
+  {
+    country: "NICARAGUA",
+    currency: "NIO",
+  },
+  {
+    country: "NIGER (THE)",
+    currency: "XOF",
+  },
+  {
+    country: "NIGERIA",
+    currency: "NGN",
+  },
+  {
+    country: "NIUE",
+    currency: "NZD",
+  },
+  {
+    country: "NORFOLK ISLAND",
+    currency: "AUD",
+  },
+  {
+    country: "NORTHERN MARIANA ISLANDS (THE)",
+    currency: "USD",
+  },
+  {
+    country: "NORWAY",
+    currency: "NOK",
+  },
+  {
+    country: "OMAN",
+    currency: "OMR",
+  },
+  {
+    country: "PAKISTAN",
+    currency: "PKR",
+  },
+  {
+    country: "PALAU",
+    currency: "USD",
+  },
+  {
+    country: "PALESTINE, STATE OF",
+    currency: "",
+  },
+  {
+    country: "PANAMA",
+    currency: "PAB",
+  },
+  {
+    country: "PANAMA",
+    currency: "USD",
+  },
+  {
+    country: "PAPUA NEW GUINEA",
+    currency: "PGK",
+  },
+  {
+    country: "PARAGUAY",
+    currency: "PYG",
+  },
+  {
+    country: "PERU",
+    currency: "PEN",
+  },
+  {
+    country: "PHILIPPINES (THE)",
+    currency: "PHP",
+  },
+  {
+    country: "PITCAIRN",
+    currency: "NZD",
+  },
+  {
+    country: "POLAND",
+    currency: "PLN",
+  },
+  {
+    country: "PORTUGAL",
+    currency: "EUR",
+  },
+  {
+    country: "PUERTO RICO",
+    currency: "USD",
+  },
+  {
+    country: "QATAR",
+    currency: "QAR",
+  },
+  {
+    country: "RÉUNION",
+    currency: "EUR",
+  },
+  {
+    country: "ROMANIA",
+    currency: "RON",
+  },
+  {
+    country: "RUSSIAN FEDERATION (THE)",
+    currency: "RUB",
+  },
+  {
+    country: "RWANDA",
+    currency: "RWF",
+  },
+  {
+    country: "SAINT BARTHÉLEMY",
+    currency: "EUR",
+  },
+  {
+    country: "SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA",
+    currency: "SHP",
+  },
+  {
+    country: "SAINT KITTS AND NEVIS",
+    currency: "XCD",
+  },
+  {
+    country: "SAINT LUCIA",
+    currency: "XCD",
+  },
+  {
+    country: "SAINT MARTIN (FRENCH PART)",
+    currency: "EUR",
+  },
+  {
+    country: "SAINT PIERRE AND MIQUELON",
+    currency: "EUR",
+  },
+  {
+    country: "SAINT VINCENT AND THE GRENADINES",
+    currency: "XCD",
+  },
+  {
+    country: "SAMOA",
+    currency: "WST",
+  },
+  {
+    country: "SAN MARINO",
+    currency: "EUR",
+  },
+  {
+    country: "SAO TOME AND PRINCIPE",
+    currency: "STN",
+  },
+  {
+    country: "SAUDI ARABIA",
+    currency: "SAR",
+  },
+  {
+    country: "SENEGAL",
+    currency: "XOF",
+  },
+  {
+    country: "SERBIA",
+    currency: "RSD",
+  },
+  {
+    country: "SEYCHELLES",
+    currency: "SCR",
+  },
+  {
+    country: "SIERRA LEONE",
+    currency: "SLL",
+  },
+  {
+    country: "SINGAPORE",
+    currency: "SGD",
+  },
+  {
+    country: "SINT MAARTEN (DUTCH PART)",
+    currency: "ANG",
+  },
+  {
+    country: 'SISTEMA UNITARIO DE COMPENSACION REGIONAL DE PAGOS "SUCRE',
+    currency: "XSU",
+  },
+  {
+    country: "SLOVAKIA",
+    currency: "EUR",
+  },
+  {
+    country: "SLOVENIA",
+    currency: "EUR",
+  },
+  {
+    country: "SOLOMON ISLANDS",
+    currency: "SBD",
+  },
+  {
+    country: "SOMALIA",
+    currency: "SOS",
+  },
+  {
+    country: "SOUTH AFRICA",
+    currency: "ZAR",
+  },
+  {
+    country: "SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS",
+    currency: "",
+  },
+  {
+    country: "SOUTH SUDAN",
+    currency: "SSP",
+  },
+  {
+    country: "SPAIN",
+    currency: "EUR",
+  },
+  {
+    country: "SRI LANKA",
+    currency: "LKR",
+  },
+  {
+    country: "SUDAN (THE)",
+    currency: "SDG",
+  },
+  {
+    country: "SURINAME",
+    currency: "SRD",
+  },
+  {
+    country: "SVALBARD AND JAN MAYEN",
+    currency: "NOK",
+  },
+  {
+    country: "SWEDEN",
+    currency: "SEK",
+  },
+  {
+    country: "SWITZERLAND",
+    currency: "CHF",
+  },
+  {
+    country: "SWITZERLAND",
+    currency: "CHE",
+  },
+  {
+    country: "SWITZERLAND",
+    currency: "CHW",
+  },
+  {
+    country: "SYRIAN ARAB REPUBLIC",
+    currency: "SYP",
+  },
+  {
+    country: "TAIWAN (PROVINCE OF CHINA)",
+    currency: "TWD",
+  },
+  {
+    country: "TAJIKISTAN",
+    currency: "TJS",
+  },
+  {
+    country: "TANZANIA, UNITED REPUBLIC OF",
+    currency: "TZS",
+  },
+  {
+    country: "THAILAND",
+    currency: "THB",
+  },
+  {
+    country: "TIMOR-LESTE",
+    currency: "USD",
+  },
+  {
+    country: "TOGO",
+    currency: "XOF",
+  },
+  {
+    country: "TOKELAU",
+    currency: "NZD",
+  },
+  {
+    country: "TONGA",
+    currency: "TOP",
+  },
+  {
+    country: "TRINIDAD AND TOBAGO",
+    currency: "TTD",
+  },
+  {
+    country: "TUNISIA",
+    currency: "TND",
+  },
+  {
+    country: "TURKEY",
+    currency: "TRY",
+  },
+  {
+    country: "TURKMENISTAN",
+    currency: "TMT",
+  },
+  {
+    country: "TURKS AND CAICOS ISLANDS (THE)",
+    currency: "USD",
+  },
+  {
+    country: "TUVALU",
+    currency: "AUD",
+  },
+  {
+    country: "UGANDA",
+    currency: "UGX",
+  },
+  {
+    country: "UKRAINE",
+    currency: "UAH",
+  },
+  {
+    country: "UNITED ARAB EMIRATES (THE)",
+    currency: "AED",
+  },
+  {
+    country: "UNITED KINGDOM OF GREAT BRITAIN AND NORTHERN IRELAND (THE)",
+    currency: "GBP",
+  },
+  {
+    country: "UNITED STATES MINOR OUTLYING ISLANDS (THE)",
+    currency: "USD",
+  },
+  {
+    country: "UNITED STATES OF AMERICA (THE)",
+    currency: "USD",
+  },
+  {
+    country: "UNITED STATES OF AMERICA (THE)",
+    currency: "USN",
+  },
+  {
+    country: "URUGUAY",
+    currency: "UYU",
+  },
+  {
+    country: "URUGUAY",
+    currency: "UYI",
+  },
+  {
+    country: "URUGUAY",
+    currency: "UYW",
+  },
+  {
+    country: "UZBEKISTAN",
+    currency: "UZS",
+  },
+  {
+    country: "VANUATU",
+    currency: "VUV",
+  },
+  {
+    country: "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+    currency: "VES",
+  },
+  {
+    country: "VIET NAM",
+    currency: "VND",
+  },
+  {
+    country: "VIRGIN ISLANDS (BRITISH)",
+    currency: "USD",
+  },
+  {
+    country: "VIRGIN ISLANDS (U.S.)",
+    currency: "USD",
+  },
+  {
+    country: "WALLIS AND FUTUNA",
+    currency: "XPF",
+  },
+  {
+    country: "WESTERN SAHARA",
+    currency: "MAD",
+  },
+  {
+    country: "YEMEN",
+    currency: "YER",
+  },
+  {
+    country: "ZAMBIA",
+    currency: "ZMW",
+  },
+  {
+    country: "ZIMBABWE",
+    currency: "ZWL",
+  },
+  {
+    country: "ZZ01_Bond Markets Unit European_EURCO",
+    currency: "XBA",
+  },
+  {
+    country: "ZZ02_Bond Markets Unit European_EMU-6",
+    currency: "XBB",
+  },
+  {
+    country: "ZZ03_Bond Markets Unit European_EUA-9",
+    currency: "XBC",
+  },
+  {
+    country: "ZZ04_Bond Markets Unit European_EUA-17",
+    currency: "XBD",
+  },
+  {
+    country: "ZZ06_Testing_Code",
+    currency: "XTS",
+  },
+  {
+    country: "ZZ07_No_Currency",
+    currency: "XXX",
+  },
+  {
+    country: "ZZ08_Gold",
+    currency: "XAU",
+  },
+  {
+    country: "ZZ09_Palladium",
+    currency: "XPD",
+  },
+  {
+    country: "ZZ10_Platinum",
+    currency: "XPT",
+  },
+  {
+    country: "ZZ11_Silver",
+    currency: "XAG",
+  },
+  {
+    country: "AFGHANISTAN",
+    currency: "AFA",
+  },
+  {
+    country: "ÅLAND ISLANDS",
+    currency: "FIM",
+  },
+  {
+    country: "ALBANIA",
+    currency: "ALK",
+  },
+  {
+    country: "ANDORRA",
+    currency: "ADP",
+  },
+  {
+    country: "ANDORRA",
+    currency: "ESP",
+  },
+  {
+    country: "ANDORRA",
+    currency: "FRF",
+  },
+  {
+    country: "ANGOLA",
+    currency: "AOK",
+  },
+  {
+    country: "ANGOLA",
+    currency: "AON",
+  },
+  {
+    country: "ANGOLA",
+    currency: "AOR",
+  },
+  {
+    country: "ARGENTINA",
+    currency: "ARA",
+  },
+  {
+    country: "ARGENTINA",
+    currency: "ARP",
+  },
+  {
+    country: "ARGENTINA",
+    currency: "ARY",
+  },
+  {
+    country: "ARMENIA",
+    currency: "RUR",
+  },
+  {
+    country: "AUSTRIA",
+    currency: "ATS",
+  },
+  {
+    country: "AZERBAIJAN",
+    currency: "AYM",
+  },
+  {
+    country: "AZERBAIJAN",
+    currency: "AZM",
+  },
+  {
+    country: "AZERBAIJAN",
+    currency: "RUR",
+  },
+  {
+    country: "BELARUS",
+    currency: "BYB",
+  },
+  {
+    country: "BELARUS",
+    currency: "BYR",
+  },
+  {
+    country: "BELARUS",
+    currency: "RUR",
+  },
+  {
+    country: "BELGIUM",
+    currency: "BEC",
+  },
+  {
+    country: "BELGIUM",
+    currency: "BEF",
+  },
+  {
+    country: "BELGIUM",
+    currency: "BEL",
+  },
+  {
+    country: "BOLIVIA",
+    currency: "BOP",
+  },
+  {
+    country: "BOSNIA AND HERZEGOVINA",
+    currency: "BAD",
+  },
+  {
+    country: "BRAZIL",
+    currency: "BRB",
+  },
+  {
+    country: "BRAZIL",
+    currency: "BRC",
+  },
+  {
+    country: "BRAZIL",
+    currency: "BRE",
+  },
+  {
+    country: "BRAZIL",
+    currency: "BRN",
+  },
+  {
+    country: "BRAZIL",
+    currency: "BRR",
+  },
+  {
+    country: "BULGARIA",
+    currency: "BGJ",
+  },
+  {
+    country: "BULGARIA",
+    currency: "BGK",
+  },
+  {
+    country: "BULGARIA",
+    currency: "BGL",
+  },
+  {
+    country: "BURMA",
+    currency: "BUK",
+  },
+  {
+    country: "CROATIA",
+    currency: "HRD",
+  },
+  {
+    country: "CROATIA",
+    currency: "HRK",
+  },
+  {
+    country: "CYPRUS",
+    currency: "CYP",
+  },
+  {
+    country: "CZECHOSLOVAKIA",
+    currency: "CSJ",
+  },
+  {
+    country: "CZECHOSLOVAKIA",
+    currency: "CSK",
+  },
+  {
+    country: "ECUADOR",
+    currency: "ECS",
+  },
+  {
+    country: "ECUADOR",
+    currency: "ECV",
+  },
+  {
+    country: "EQUATORIAL GUINEA",
+    currency: "GQE",
+  },
+  {
+    country: "ESTONIA",
+    currency: "EEK",
+  },
+  {
+    country: "EUROPEAN MONETARY CO-OPERATION FUND (EMCF)",
+    currency: "XEU",
+  },
+  {
+    country: "FINLAND",
+    currency: "FIM",
+  },
+  {
+    country: "FRANCE",
+    currency: "FRF",
+  },
+  {
+    country: "FRENCH GUIANA",
+    currency: "FRF",
+  },
+  {
+    country: "FRENCH SOUTHERN TERRITORIES",
+    currency: "FRF",
+  },
+  {
+    country: "GEORGIA",
+    currency: "GEK",
+  },
+  {
+    country: "GEORGIA",
+    currency: "RUR",
+  },
+  {
+    country: "GERMAN DEMOCRATIC REPUBLIC",
+    currency: "DDM",
+  },
+  {
+    country: "GERMANY",
+    currency: "DEM",
+  },
+  {
+    country: "GHANA",
+    currency: "GHC",
+  },
+  {
+    country: "GHANA",
+    currency: "GHP",
+  },
+  {
+    country: "GREECE",
+    currency: "GRD",
+  },
+  {
+    country: "GUADELOUPE",
+    currency: "FRF",
+  },
+  {
+    country: "GUINEA",
+    currency: "GNE",
+  },
+  {
+    country: "GUINEA",
+    currency: "GNS",
+  },
+  {
+    country: "GUINEA-BISSAU",
+    currency: "GWE",
+  },
+  {
+    country: "GUINEA-BISSAU",
+    currency: "GWP",
+  },
+  {
+    country: "HOLY SEE (VATICAN CITY STATE)",
+    currency: "ITL",
+  },
+  {
+    country: "ICELAND",
+    currency: "ISJ",
+  },
+  {
+    country: "IRELAND",
+    currency: "IEP",
+  },
+  {
+    country: "ISRAEL",
+    currency: "ILP",
+  },
+  {
+    country: "ISRAEL",
+    currency: "ILR",
+  },
+  {
+    country: "ITALY",
+    currency: "ITL",
+  },
+  {
+    country: "KAZAKHSTAN",
+    currency: "RUR",
+  },
+  {
+    country: "KYRGYZSTAN",
+    currency: "RUR",
+  },
+  {
+    country: "LAO",
+    currency: "LAJ",
+  },
+  {
+    country: "LATVIA",
+    currency: "LVL",
+  },
+  {
+    country: "LATVIA",
+    currency: "LVR",
+  },
+  {
+    country: "LESOTHO",
+    currency: "LSM",
+  },
+  {
+    country: "LESOTHO",
+    currency: "ZAL",
+  },
+  {
+    country: "LITHUANIA",
+    currency: "LTL",
+  },
+  {
+    country: "LITHUANIA",
+    currency: "LTT",
+  },
+  {
+    country: "LUXEMBOURG",
+    currency: "LUC",
+  },
+  {
+    country: "LUXEMBOURG",
+    currency: "LUF",
+  },
+  {
+    country: "LUXEMBOURG",
+    currency: "LUL",
+  },
+  {
+    country: "MADAGASCAR",
+    currency: "MGF",
+  },
+  {
+    country: "MALAWI",
+    currency: "MWK",
+  },
+  {
+    country: "MALDIVES",
+    currency: "MVQ",
+  },
+  {
+    country: "MALI",
+    currency: "MLF",
+  },
+  {
+    country: "MALTA",
+    currency: "MTL",
+  },
+  {
+    country: "MALTA",
+    currency: "MTP",
+  },
+  {
+    country: "MARTINIQUE",
+    currency: "FRF",
+  },
+  {
+    country: "MAURITANIA",
+    currency: "MRO",
+  },
+  {
+    country: "MAYOTTE",
+    currency: "FRF",
+  },
+  {
+    country: "MEXICO",
+    currency: "MXP",
+  },
+  {
+    country: "MOLDOVA, REPUBLIC OF",
+    currency: "RUR",
+  },
+  {
+    country: "MONACO",
+    currency: "FRF",
+  },
+  {
+    country: "MOZAMBIQUE",
+    currency: "MZE",
+  },
+  {
+    country: "MOZAMBIQUE",
+    currency: "MZM",
+  },
+  {
+    country: "NETHERLANDS",
+    currency: "NLG",
+  },
+  {
+    country: "NETHERLANDS ANTILLES",
+    currency: "ANG",
+  },
+  {
+    country: "NICARAGUA",
+    currency: "NIC",
+  },
+  {
+    country: "PERU",
+    currency: "PEH",
+  },
+  {
+    country: "PERU",
+    currency: "PEI",
+  },
+  {
+    country: "PERU",
+    currency: "PEN",
+  },
+  {
+    country: "PERU",
+    currency: "PES",
+  },
+  {
+    country: "POLAND",
+    currency: "PLZ",
+  },
+  {
+    country: "PORTUGAL",
+    currency: "PTE",
+  },
+  {
+    country: "RÉUNION",
+    currency: "FRF",
+  },
+  {
+    country: "ROMANIA",
+    currency: "ROK",
+  },
+  {
+    country: "ROMANIA",
+    currency: "ROL",
+  },
+  {
+    country: "ROMANIA",
+    currency: "RON",
+  },
+  {
+    country: "RUSSIAN FEDERATION",
+    currency: "RUR",
+  },
+  {
+    country: "SAINT MARTIN",
+    currency: "FRF",
+  },
+  {
+    country: "SAINT PIERRE AND MIQUELON",
+    currency: "FRF",
+  },
+  {
+    country: "SAINT-BARTHÉLEMY",
+    currency: "FRF",
+  },
+  {
+    country: "SAN MARINO",
+    currency: "ITL",
+  },
+  {
+    country: "SAO TOME AND PRINCIPE",
+    currency: "STD",
+  },
+  {
+    country: "SERBIA AND MONTENEGRO",
+    currency: "CSD",
+  },
+  {
+    country: "SERBIA AND MONTENEGRO",
+    currency: "EUR",
+  },
+  {
+    country: "SLOVAKIA",
+    currency: "SKK",
+  },
+  {
+    country: "SLOVENIA",
+    currency: "SIT",
+  },
+  {
+    country: "SOUTH AFRICA",
+    currency: "ZAL",
+  },
+  {
+    country: "SOUTH SUDAN",
+    currency: "SDG",
+  },
+  {
+    country: "SOUTHERN RHODESIA",
+    currency: "RHD",
+  },
+  {
+    country: "SPAIN",
+    currency: "ESA",
+  },
+  {
+    country: "SPAIN",
+    currency: "ESB",
+  },
+  {
+    country: "SPAIN",
+    currency: "ESP",
+  },
+  {
+    country: "SUDAN",
+    currency: "SDD",
+  },
+  {
+    country: "SUDAN",
+    currency: "SDP",
+  },
+  {
+    country: "SURINAME",
+    currency: "SRG",
+  },
+  {
+    country: "SWAZILAND",
+    currency: "SZL",
+  },
+  {
+    country: "SWITZERLAND",
+    currency: "CHC",
+  },
+  {
+    country: "TAJIKISTAN",
+    currency: "RUR",
+  },
+  {
+    country: "TAJIKISTAN",
+    currency: "TJR",
+  },
+  {
+    country: "TIMOR-LESTE",
+    currency: "IDR",
+  },
+  {
+    country: "TIMOR-LESTE",
+    currency: "TPE",
+  },
+  {
+    country: "TURKEY",
+    currency: "TRL",
+  },
+  {
+    country: "TURKEY",
+    currency: "TRY",
+  },
+  {
+    country: "TURKMENISTAN",
+    currency: "RUR",
+  },
+  {
+    country: "TURKMENISTAN",
+    currency: "TMM",
+  },
+  {
+    country: "UGANDA",
+    currency: "UGS",
+  },
+  {
+    country: "UGANDA",
+    currency: "UGW",
+  },
+  {
+    country: "UKRAINE",
+    currency: "UAK",
+  },
+  {
+    country: "UNION OF SOVIET SOCIALIST REPUBLICS",
+    currency: "SUR",
+  },
+  {
+    country: "UNITED STATES",
+    currency: "USS",
+  },
+  {
+    country: "URUGUAY",
+    currency: "UYN",
+  },
+  {
+    country: "URUGUAY",
+    currency: "UYP",
+  },
+  {
+    country: "UZBEKISTAN",
+    currency: "RUR",
+  },
+  {
+    country: "VENEZUELA",
+    currency: "VEB",
+  },
+  {
+    country: "VENEZUELA",
+    currency: "VEF",
+  },
+  {
+    country: "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+    currency: "VEF",
+  },
+  {
+    country: "VENEZUELA (BOLIVARIAN REPUBLIC OF)",
+    currency: "VEF",
+  },
+  {
+    country: "VIETNAM",
+    currency: "VNC",
+  },
+  {
+    country: "YEMEN, DEMOCRATIC",
+    currency: "YDD",
+  },
+  {
+    country: "YUGOSLAVIA",
+    currency: "YUD",
+  },
+  {
+    country: "YUGOSLAVIA",
+    currency: "YUM",
+  },
+  {
+    country: "YUGOSLAVIA",
+    currency: "YUN",
+  },
+  {
+    country: "ZAIRE",
+    currency: "ZRN",
+  },
+  {
+    country: "ZAIRE",
+    currency: "ZRZ",
+  },
+  {
+    country: "ZAMBIA",
+    currency: "ZMK",
+  },
+  {
+    country: "ZIMBABWE",
+    currency: "ZWC",
+  },
+  {
+    country: "ZIMBABWE",
+    currency: "ZWD",
+  },
+  {
+    country: "ZIMBABWE",
+    currency: "ZWD",
+  },
+  {
+    country: "ZIMBABWE",
+    currency: "ZWN",
+  },
+  {
+    country: "ZIMBABWE",
+    currency: "ZWR",
+  },
+  {
+    country: "ZZ01_Gold-Franc",
+    currency: "XFO",
+  },
+  {
+    country: "ZZ02_RINET Funds Code",
+    currency: "XRE",
+  },
+  {
+    country: "ZZ05_UIC-Franc",
+    currency: "XFU",
+  },
+];
 
-export default { Country };
+export default { Country, Currency };

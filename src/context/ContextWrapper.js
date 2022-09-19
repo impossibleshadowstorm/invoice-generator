@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import GlobalContext from "./GlobalContext";
 
 const ContextWrapper = (props) => {
-
   const [company, setCompany] = useState({
     companyName: "",
     yourName: "",
@@ -53,6 +52,7 @@ const ContextWrapper = (props) => {
 
   // Invoice Data
   const [invoiceHeading, setInvoiceHeading] = useState("Invoice");
+  const [billCurrency, setBillCurrency] = useState("INR");
 
   return (
     <GlobalContext.Provider
@@ -63,6 +63,8 @@ const ContextWrapper = (props) => {
         setInvoiceHeading,
         invoiceMetaData,
         invoiceMetaDataInputEvent,
+        billCurrency,
+        setBillCurrency,
       }}
     >
       {props.children}
