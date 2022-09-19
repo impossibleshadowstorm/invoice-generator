@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import {
   Container,
   Box,
@@ -13,6 +13,7 @@ import data from "./data/country";
 import GlobalContext from "../context/GlobalContext";
 import CustomizedRow from "./common/customizedRow";
 import FeatherIcon from "feather-icons-react";
+import {Document, Page} from "react-pdf";
 
 const cssStyles = {
   EditTextStyle: {
@@ -99,6 +100,9 @@ const InvoiceCard = () => {
     billCurrency,
     setBillCurrency,
   } = useContext(GlobalContext);
+
+  const [numPages, setNumPages] = useState(null);
+  const [pageNumber, setPageNumber] = useState(1);
 
   return (
     <Container
