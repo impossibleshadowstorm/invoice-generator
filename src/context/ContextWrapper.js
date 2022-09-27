@@ -26,20 +26,19 @@ const ContextWrapper = (props) => {
     });
   };
 
+  const date = new Date(Date.now());
+
   const [invoiceMetaData, setInvoiceMetaData] = useState({
     invoiceNumberTag: "Invoice#",
     invoiceNumber: "",
     invoiceDateTag: "Invoice Date",
-    invoiceDate: "",
+    invoiceDate: new Date().getFullYear(),
     invoiceDueDateTag: "Due Date",
-    invoiceDueDate: "",
+    invoiceDueDate: null,
   });
 
   const invoiceMetaDataInputEvent = (event) => {
     const { value, name } = event.target;
-
-    console.log(value);
-    console.log(name);
 
     setInvoiceMetaData((preValue) => {
       console.log(preValue);
@@ -54,6 +53,24 @@ const ContextWrapper = (props) => {
   const [invoiceHeading, setInvoiceHeading] = useState("Invoice");
   const [billCurrency, setBillCurrency] = useState("INR");
 
+  // Add Lines
+  const [itemsRow, setItemsRow] = useState([
+    {
+      desc: "",
+      qty: 0,
+      rate: 0.0,
+      amt: 0.0,
+    },
+  ]);
+
+  // Total Part
+  const [totalPart, setTotalPart] = useState({
+    subTotal: 0.0,
+    salesTax: 10.0,
+    salesTaxTotal: 0.0,
+    total: 0.0,
+  });
+
   return (
     <GlobalContext.Provider
       value={{
@@ -65,6 +82,10 @@ const ContextWrapper = (props) => {
         invoiceMetaDataInputEvent,
         billCurrency,
         setBillCurrency,
+        itemsRow,
+        setItemsRow,
+        totalPart,
+        setTotalPart,
       }}
     >
       {props.children}

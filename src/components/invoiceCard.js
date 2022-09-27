@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import {
   Container,
   Box,
@@ -11,9 +11,7 @@ import { EditText, EditTextarea } from "react-edit-text";
 import style from "./invoiceCard.module.css";
 import data from "./data/country";
 import GlobalContext from "../context/GlobalContext";
-import CustomizedRow from "./common/customizedRow";
 import FeatherIcon from "feather-icons-react";
-import {Document, Page} from "react-pdf";
 
 const cssStyles = {
   EditTextStyle: {
@@ -55,6 +53,17 @@ const cssStyles = {
     width: "80%",
     color: "black",
   },
+  SmallEditTextStyle: {
+    margin: "2px 0",
+    marginRight: "5px",
+    fontSize: "14px",
+    boxSizing: "border-box",
+    border: "none",
+    borderBottom: "1px dashed #E1ECFD",
+    width: "80%",
+    padding: "0px 0px",
+    color: "black",
+  },
 };
 
 const placeholders = {
@@ -87,8 +96,6 @@ const invoiceTableHeading = {
   amount: "Amount",
 };
 
-
-
 const InvoiceCard = () => {
   const {
     company,
@@ -99,10 +106,88 @@ const InvoiceCard = () => {
     invoiceMetaDataInputEvent,
     billCurrency,
     setBillCurrency,
+    itemsRow,
+    setItemsRow,
+    totalPart,
+    setTotalPart,
   } = useContext(GlobalContext);
 
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
+  const handleAddListItem = () => {
+    setItemsRow([
+      ...itemsRow,
+      {
+        desc: "",
+        qty: 0,
+        rate: 0.0,
+        amt: 0.0,
+      },
+    ]);
+  };
+  const handleRemoveListItem = (idx) => {
+    const list = [...itemsRow];
+    list.splice(idx, 1);
+    setItemsRow(list);
+  };
+
+  const handleRowItemChange = (e, index) => {
+    const { name, value } = e.target;
+    const list = [...itemsRow];
+    list[index][name] = value;
+
+    if (name === "rate" || name === "qty") {
+      var amount = 0.0;
+      var qt = parseFloat(list[index].qty);
+      var rt = parseFloat(list[index].rate);
+      amount = qt * rt;
+      list[index]["amt"] = amount;
+    }
+
+    setItemsRow(list);
+  };
+
+  const handleSalesTaxChange = (e) => {
+    const { name, value } = e.target;
+
+    const list = { ...totalPart };
+    list[name] = value;
+
+    setTotalPart(list);
+  };
+
+  const calculateSubTotal = () => {
+    const list = [...itemsRow];
+
+    let total = 0;
+
+    list.map((item, index) => {
+      total += parseFloat(item["amt"]);
+    });
+
+    return total;
+  };
+
+  useEffect(() => {
+    const updateSubTotal = { ...totalPart, subTotal: calculateSubTotal() };
+
+    const subtotal = updateSubTotal["subTotal"];
+    const salesTax = updateSubTotal["salesTax"];
+    let salesTaxTotal = (subtotal * salesTax) / 100;
+
+    const updateSalesTaxTotal = {
+      ...updateSubTotal,
+      salesTaxTotal: salesTaxTotal,
+    };
+
+    let total =
+      updateSalesTaxTotal["subTotal"] + updateSalesTaxTotal["salesTaxTotal"];
+
+    const updateTotal = {
+      ...updateSalesTaxTotal,
+      total: total,
+    };
+
+    setTotalPart(updateTotal);
+  }, [itemsRow, totalPart["subTotal"], totalPart["salesTax"]]);
 
   return (
     <Container
@@ -189,6 +274,7 @@ const InvoiceCard = () => {
       <Box sx={{ height: "80px" }}></Box>
       {/* Customer Company Details */}
       <Box sx={{ width: "100%", height: "145px", display: "flex" }}>
+        {/* Bill To:: */}
         <Box
           sx={{
             boxSizing: "border-box",
@@ -244,6 +330,7 @@ const InvoiceCard = () => {
             ))}
           </Select>
         </Box>
+        {/* Invoice Section */}
         <Box sx={{ width: "30%", display: "flex" }}>
           <Box sx={{ width: "40%" }}>
             <EditText
@@ -253,6 +340,7 @@ const InvoiceCard = () => {
               placeholder={placeholders.invoiceTag.invoiceNameTag}
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
+
             <EditText
               onChange={invoiceMetaDataInputEvent}
               name="invoiceDateTag"
@@ -277,6 +365,7 @@ const InvoiceCard = () => {
               style={{ ...cssStyles.EditTextStyle, width: "80%" }}
             />
             <EditText
+              type="date"
               onChange={invoiceMetaDataInputEvent}
               name="invoiceDate"
               value={invoiceMetaData.invoiceDate}
@@ -372,38 +461,121 @@ const InvoiceCard = () => {
             </Grid>
           </Grid>
           {/* Row */}
-          <Box sx={{ width: "97%", display: "flex" }}>
+          {/* <Box sx={{ width: "97%", display: "flex" }}>
             <CustomizedRow />
-          </Box>
-          <Box sx={{ width: "100%", display: "flex" }}>
-            <CustomizedRow />
-            <Box
-              sx={{
-                width: "3%",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                zIndex: "0",
-                opacity: "0",
-                "&:hover": {
-                  cursor: "pointer",
-                  zIndex: "1",
-                  opacity: "1",
-                },
-              }}
-            >
-              <FeatherIcon
-                icon="trash"
-                width="20px"
-                height="20px"
-                color="black"
-                style={{
-                  // visibility: "hidden",
-                  "&:hover": { visibility: "visible", cursor: "pointer" },
+          </Box> */}
+          {/* Items List */}
+          {itemsRow.map((item, idx) => (
+            <Box sx={{ width: "100%", display: "flex" }}>
+              <Grid
+                container
+                sx={{
+                  marginTop: "10px",
+                  backgroundColor: "#F2F3F5",
+                  borderBottom: "2px solid black",
+                  height: "110px",
+                  boxSizing: "border-box",
+                  padding: "10px 10px",
                 }}
-              />
+              >
+                {/* Description */}
+                <Grid item xs={6} sx={{ height: "90%" }}>
+                  <EditTextarea
+                    name="desc"
+                    value={item["desc"]}
+                    onChange={(e) => handleRowItemChange(e, idx)}
+                    placeholder="Description"
+                    style={{
+                      ...cssStyles.SmallEditTextStyle,
+                      height: "89px",
+                      boxSizing: "border-box",
+                    }}
+                  />
+                </Grid>
+                {/* Quantity */}
+                <Grid item xs={2}>
+                  <EditText
+                    type="number"
+                    name="qty"
+                    value={item["qty"].toString()}
+                    onChange={(e) => handleRowItemChange(e, idx)}
+                    placeholder="0"
+                    style={{
+                      ...cssStyles.SmallEditTextStyle,
+                      display: "flex",
+                      alignItems: "center",
+                      float: "right",
+                      textAlign: "right",
+                      justifyContent: "flex-end",
+                    }}
+                  />
+                </Grid>
+                {/* Rate */}
+                <Grid item xs={2}>
+                  <EditText
+                    type="number"
+                    name="rate"
+                    value={item["rate"].toString()}
+                    onChange={(e) => handleRowItemChange(e, idx)}
+                    placeholder="0.00"
+                    style={{
+                      ...cssStyles.SmallEditTextStyle,
+                      display: "flex",
+                      alignItems: "center",
+                      float: "right",
+                      textAlign: "right",
+                      justifyContent: "flex-end",
+                    }}
+                  />
+                </Grid>
+                {/* Amount */}
+                <Grid item xs={2}>
+                  <EditText
+                    readonly={true}
+                    type="number"
+                    name="amt"
+                    value={item["amt"].toString()}
+                    onChange={(e) => handleRowItemChange(e, idx)}
+                    placeholder="0.00"
+                    style={{
+                      ...cssStyles.SmallEditTextStyle,
+                      display: "flex",
+                      alignItems: "center",
+                      float: "right",
+                      textAlign: "right",
+                      justifyContent: "flex-end",
+                    }}
+                  />
+                </Grid>
+              </Grid>
+              <Box
+                onClick={() => handleRemoveListItem(idx)}
+                sx={{
+                  width: "3%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  zIndex: "0",
+                  opacity: "0",
+                  "&:hover": {
+                    cursor: "pointer",
+                    zIndex: "1",
+                    opacity: "1",
+                  },
+                }}
+              >
+                <FeatherIcon
+                  icon="trash"
+                  width="20px"
+                  height="20px"
+                  color="black"
+                  style={{
+                    "&:hover": { visibility: "visible", cursor: "pointer" },
+                  }}
+                />
+              </Box>
             </Box>
-          </Box>
+          ))}
         </Box>
       </Box>
 
@@ -417,13 +589,60 @@ const InvoiceCard = () => {
           width: "100%",
         }}
       >
-        <Box sx={{ width: "48.5%" }}></Box>
+        {/* Add Button */}
+        <Box sx={{ width: "48.5%", justifyContent: "center" }}>
+          <Box
+            onClick={handleAddListItem}
+            sx={{
+              padding: "5px",
+              borderRadius: "5px",
+              boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+              boxSizing: "border-box",
+              backgroundColor: "green",
+              width: "50%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              margin: "10px 20px",
+              "&:hover": {
+                backgroundColor: "red",
+                cursor: "pointer",
+              },
+            }}
+          >
+            {/* Plus Icon Box */}
+            <Box
+              sx={{
+                height: "20px",
+                width: "20px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                borderRadius: "50%",
+              }}
+            >
+              <FeatherIcon
+                icon="plus"
+                color="white"
+                height="15px"
+                width="15px"
+              />
+            </Box>
+            <Typography
+              sx={{ color: "white", fontSize: "15px", marginLeft: "5px" }}
+            >
+              Add Line Item
+            </Typography>
+          </Box>
+        </Box>
+        {/* Total Side */}
         <Box
           sx={{
             width: "48.5%",
             height: "100%",
           }}
         >
+          {/* Sub Total */}
           <Box sx={{ display: "flex", height: "30%" }}>
             <Box
               sx={{
@@ -446,20 +665,57 @@ const InvoiceCard = () => {
               <Typography
                 sx={{ textAlign: "right", color: "black", fontWeight: "bold" }}
               >
-                0
+                {totalPart["subTotal"]}
               </Typography>
             </Box>
           </Box>
-          <Box sx={{ display: "flex", height: "30%" }}>
+          {/* Sales Tax */}
+          <Box sx={{ display: "flex", height: "30%", alignItems: "center" }}>
             <Box
               sx={{
                 width: "35%",
-                padding: "10px",
                 boxSizing: "border-box",
+                display: "flex",
+                justifyContent: "flex-end",
               }}
             >
-              <Typography sx={{ textAlign: "right", color: "#5A5A5A" }}>
-                Sales Taxes (10%)
+              <Typography
+                style={{
+                  ...cssStyles.EditTextStyle,
+                  borderBottomColor: "transparent",
+                  width: "100px",
+                  textAlign: "right",
+                  color: "#5A5A5A",
+                  fontSize: "16px",
+                }}
+              >
+                Sales Tax
+              </Typography>
+              <EditText
+                type="number"
+                placeholder="10"
+                name="salesTax"
+                value={totalPart["salesTax"].toString()}
+                onChange={(e) => handleSalesTaxChange(e)}
+                style={{
+                  ...cssStyles.EditTextStyle,
+                  width: "40px",
+                  textAlign: "right",
+                  color: "#5A5A5A",
+                  fontSize: "16px",
+                }}
+              />
+              <Typography
+                style={{
+                  ...cssStyles.EditTextStyle,
+                  borderBottomColor: "transparent",
+                  width: "15px",
+                  textAlign: "right",
+                  color: "#5A5A5A",
+                  fontSize: "16px",
+                }}
+              >
+                %
               </Typography>
             </Box>
             <Box
@@ -472,7 +728,7 @@ const InvoiceCard = () => {
               <Typography
                 sx={{ textAlign: "right", color: "black", fontWeight: "bold" }}
               >
-                0
+                {totalPart["salesTaxTotal"]}
               </Typography>
             </Box>
           </Box>
@@ -542,7 +798,7 @@ const InvoiceCard = () => {
                   width: "50%",
                 }}
               >
-                0
+                {totalPart["total"]}
               </Typography>
             </Box>
           </Box>

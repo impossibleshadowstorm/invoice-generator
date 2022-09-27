@@ -1,7 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 import "./App.css";
 import InvoiceCard from "./components/invoiceCard";
-// import TopMenuBar from "./components/topMenuBar";
 import FeatherIcon from "feather-icons-react";
 
 function App() {

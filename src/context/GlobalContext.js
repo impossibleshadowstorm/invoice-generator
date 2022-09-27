@@ -8,7 +8,11 @@ const GlobalContext = React.createContext({
   invoiceMetaData: "",
   invoiceMetaDataInputEvent: () => {},
   billCurrency: "",
-  setBillCurrency: ()=>{}
+  setBillCurrency: () => {},
+  itemsRow: [],
+  setItemsRow: () => {},
+  totalPart: {},
+  setTotalPart: () => {},
 });
 
 export default GlobalContext;
